@@ -1,0 +1,17 @@
+<form #loginForm="ngForm" (ngSubmit)="sendloginForm(loginForm)">
+  <label>Username
+    <input
+      type="text"
+      name="username"
+      ngModel
+    >
+  </label>
+  <label>Password
+    <input
+      type="text"
+      name="password"
+      ngModel
+    >
+  </label>
+  <input type="submit" value="Login">
+</form>

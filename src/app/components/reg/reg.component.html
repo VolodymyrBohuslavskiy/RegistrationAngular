@@ -1,0 +1,22 @@
+<form #regForm="ngForm" (ngSubmit)="sendRegForm(regForm)">
+  <label>Username
+    <input
+      type="text"
+      name="username"
+      ngModel>
+  </label>
+
+  <label>Password
+    <input
+      type="text"
+      name="password"
+      ngModel>
+  </label>
+  <label>Email
+    <input
+      type="text"
+      name="email"
+      ngModel>
+  </label>
+  <input type="submit" value="Registry">
+</form>
