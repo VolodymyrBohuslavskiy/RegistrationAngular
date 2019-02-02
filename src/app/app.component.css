@@ -1,3 +1,14 @@
 label {
   margin: 10px;
 }
+
+a {
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: darkslategray;
+}
+
+a:hover{
+  color: red;
+}
