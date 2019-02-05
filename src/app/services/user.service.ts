@@ -15,4 +15,13 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:8080/showall');
   }
+
+  deleteUser(id: number) {
+    return this.http.delete('http://localhost:8080/delete' + id).subscribe();
+  }
+
+  saveUser(user: string) {
+    return this.http.post('http://localhost:8080/add', user).subscribe();
+  }
+
 }

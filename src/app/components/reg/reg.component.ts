@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-reg',
@@ -8,7 +9,7 @@ import {NgForm} from '@angular/forms';
 })
 export class RegComponent implements OnInit {
 
-  constructor() {
+  constructor(public userService: UserService) {
   }
 
   ngOnInit() {
@@ -22,8 +23,12 @@ export class RegComponent implements OnInit {
       regForm.value.email !== '' &&
       regForm.value.email !== null
     ) {
-      const user = {username: regForm.value.username, password: regForm.value.password, email: regForm.value.email};
-      console.log(JSON.stringify(user));
+      const user = {
+        username: regForm.value.username,
+        password: regForm.value.password,
+        email: regForm.value.email
+      };
+      this.userService.saveUser(JSON.stringify(user));
       regForm.resetForm();
     }
   }
