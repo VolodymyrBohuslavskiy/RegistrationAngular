@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-log',
@@ -8,7 +9,9 @@ import {NgForm} from '@angular/forms';
 })
 export class LogComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    public userService: UserService
+  ) {
   }
 
   ngOnInit() {
@@ -21,7 +24,7 @@ export class LogComponent implements OnInit {
       loginForm.value.password !== null &&
       loginForm.value.username !== null) {
       const user = {username: loginForm.value.username, password: loginForm.value.password};
-      console.log(JSON.stringify(user));
+      this.userService.loginUser(JSON.stringify(user));
       loginForm.resetForm();
     }
 

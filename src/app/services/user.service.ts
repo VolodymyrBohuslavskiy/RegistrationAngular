@@ -21,7 +21,13 @@ export class UserService {
   }
 
   saveUser(user: string) {
+    console.log(JSON.stringify(user));
     return this.http.post('http://localhost:8080/add', user).subscribe();
+  }
+
+  loginUser(user: string) {
+    console.log(user);
+    return this.http.post('http://localhost:8080/login', user).subscribe();
   }
 
 }
